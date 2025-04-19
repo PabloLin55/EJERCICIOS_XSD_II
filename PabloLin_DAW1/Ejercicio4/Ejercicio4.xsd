@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Nombre: Pablo Lin 
+Curso: 1DAW
+Fecha: 19/04/25
+Ejercicio: Ejercicio4
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="letras"> 
+        <xs:simpleType> 
+            <xs:restriction base="xs:string"> 
+                <xs:pattern value="([A-Z][a-z])+"/> 
+            </xs:restriction> 
+        </xs:simpleType> 
+    </xs:element> 
+</xs:schema>

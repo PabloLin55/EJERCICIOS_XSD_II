@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Nombre: Pablo Lin 
+Curso: 1DAW
+Fecha: 19/04/25
+Ejercicio: Ejercicio2
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="tipoNumero">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-1][0-9]"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoLetra">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="X"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="Z"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:element name="fichas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ficha" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                        <xs:element name="codigo" type="tipoNumero"/>
+                        <xs:element name="nombre" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="numero" type="tipoNumero" use="required"/>
+                        <xs:attribute name="letra" type="tipoLetra"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
